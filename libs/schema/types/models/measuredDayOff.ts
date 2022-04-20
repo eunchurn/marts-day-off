@@ -7,7 +7,7 @@ export const measuredDayOff = objectType({
   definition(t) {
     t.nonNull.id("id", MeasuredDayOff.id);
     t.nonNull.int("targetMonth", MeasuredDayOff.targetMonth);
-    t.nonNull.list.nullable.date("targetDay", MeasuredDayOff.targetDay);
-    t.nonNull.list.nullable.field("Mart", MeasuredDayOff.Mart);
+    t.list.nullable.field("targetDay", MeasuredDayOff.targetDay);
+    t.list.nullable.field("Mart", MeasuredDayOff.Mart);
   },
 });

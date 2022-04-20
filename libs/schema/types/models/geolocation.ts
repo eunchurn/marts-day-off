@@ -8,6 +8,6 @@ export const geolocation = objectType({
     t.nonNull.id("id", GeoLocation.id);
     t.nonNull.float("latitude", GeoLocation.latitude);
     t.nonNull.float("longitude", GeoLocation.longitude);
-    t.nullable.list.nullable.field("Mart", GeoLocation.Mart);
+    t.list.nullable.field("Mart", GeoLocation.Mart);
   },
 });

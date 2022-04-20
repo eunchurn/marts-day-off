@@ -10,8 +10,8 @@ export const mart = objectType({
     t.nonNull.string("name", Mart.name);
     t.nonNull.string("tel", Mart.tel);
     t.nonNull.string("address", Mart.address);
-    t.nullable.date("openTime", Mart.openTime);
-    t.nullable.date("closeTime", Mart.closeTime);
+    t.nullable.field("openTime", Mart.openTime);
+    t.nullable.field("closeTime", Mart.closeTime);
     t.nullable.field("dayOffRule", Mart.dayOffRule);
     t.nullable.string("dayOffRuleId", Mart.dayOffRuleId);
     t.nullable.field("measuredDayOff", Mart.measuredDayOff);
