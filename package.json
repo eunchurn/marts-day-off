@@ -15,7 +15,7 @@
     "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json libs/schema/index.ts",
     "prebuild": "npm -s run generate",
     "typecheck": "tsc --noEmit",
-    "postbuild": "yarn schema:publish",
+    "postbuild": "npm -s run generate && npm -s run schema:publish",
     "schema:publish": "rover subgraph publish mart-day-off@prod --name mart-day-off --schema ./generated/schema.graphql --routing-url https://marts-day-off.vercel.app/api"
   },
   "dependencies": {
