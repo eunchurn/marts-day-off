@@ -1,0 +1,93 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator nexusPrisma {
+  provider = "nexus-prisma"
+}
+
+model User {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  email    String @unique
+  name     String
+  password String
+  salt     String
+}
+
+enum MartBrand {
+  COSTCO
+  E_MART
+  LOTTE_MART
+  HOME_PLUS
+  LOTTE_SUPER_FRESH
+  NOBRAND
+  ETC
+}
+
+enum Day {
+  Monday
+  Tuesday
+  Wednesday
+  Thursday
+  Friday
+  Saturday
+  Sunday
+}
+
+enum WeekNumber {
+  First
+  Second
+  Third
+  Fourth
+}
+
+model DayOffRule {
+  id       String     @id @default(auto()) @map("_id") @db.ObjectId
+  dayRule  Day
+  weekRule WeekNumber
+  Mart     Mart[]     @relation(fields: [martId], references: [id])
+  martId   String[]   @db.ObjectId
+
+  @@unique([dayRule, weekRule], name: "dayRuleWithWeekRule")
+}
+
+model MeasuredDayOff {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  targetMonth Int
+  targetDay   DateTime[]
+  Mart        Mart[]
+}
+
+model GeoLocation {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  latitude  Float
+  longitude Float
+  altitude  Float
+  Mart      Mart[]
+
+  @@unique([latitude, longitude], name: "unique_lat_lon")
+}
+
+model Mart {
+  id               String          @id @default(auto()) @map("_id") @db.ObjectId
+  brand            MartBrand
+  name             String
+  tel              String
+  address          String
+  openTime         DateTime?
+  closeTime        DateTime?
+  dayOffRule       DayOffRule[]    @relation(fields: [dayOffRuleId], references: [id])
+  dayOffRuleId     String[]        @db.ObjectId
+  measuredDayOff   MeasuredDayOff? @relation(fields: [measuredDayOffId], references: [id])
+  measuredDayOffId String?         @db.ObjectId
+  geolocation      GeoLocation     @relation(fields: [geoLocationId], references: [id])
+  geoLocationId    String          @db.ObjectId
+
+
+  @@unique([brand, name], name: "unique_brand_with_storeName")
+}
