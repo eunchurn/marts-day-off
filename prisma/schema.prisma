@@ -58,7 +58,7 @@ model DayOffRule {
 
 model MeasuredDayOff {
   id          String     @id @default(auto()) @map("_id") @db.ObjectId
-  targetMonth Int
+  targetMonth Int?
   targetDay   DateTime[]
   Mart        Mart[]
 }
