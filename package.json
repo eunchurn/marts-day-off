@@ -13,7 +13,8 @@
     "generate:prisma": "prisma generate",
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
     "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json libs/schema/index.ts",
-    "prebuild": "npm -s run generate"
+    "prebuild": "npm -s run generate",
+    "local:schema:publish": "rover subgraph publish mart-day-off@prod --name mart-day-off --schema ./generated/schema.graphql --routing-url https://marts-day-off.vercel.app/api"
   },
   "dependencies": {
     "@apollo/client": "3.5.10",
@@ -34,6 +35,7 @@
     "react-markdown": "8.0.2"
   },
   "devDependencies": {
+    "@apollo/rover": "^0.5.1",
     "@eunchurn/eslint-config": "^0.1.8",
     "@eunchurn/prettier-config": "^0.0.2",
     "@types/graphql": "14.5.0",

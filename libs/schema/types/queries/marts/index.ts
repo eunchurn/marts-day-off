@@ -4,7 +4,7 @@ import { MartWhereInput, MartOrderByInput } from "./inputType";
 
 export const queryMarts = queryField("marts", {
   type: Mart.$name,
-  // list: true,
+  list: true,
   args: {
     where: arg({ type: MartWhereInput }),
     take: nullable(intArg()),
