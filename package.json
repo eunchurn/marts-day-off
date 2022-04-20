@@ -14,14 +14,16 @@
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
     "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json libs/schema/index.ts",
     "prebuild": "npm -s run generate",
-    "local:schema:publish": "rover subgraph publish mart-day-off@prod --name mart-day-off --schema ./generated/schema.graphql --routing-url https://marts-day-off.vercel.app/api"
+    "typecheck": "tsc --noEmit",
+    "postbuild": "yarn schema:publish",
+    "schema:publish": "rover subgraph publish mart-day-off@prod --name mart-day-off --schema ./generated/schema.graphql --routing-url https://marts-day-off.vercel.app/api"
   },
   "dependencies": {
     "@apollo/client": "3.5.10",
     "@prisma/client": "3.12.0",
     "apollo-server-micro": "3.6.7",
     "express": "4.17.3",
-    "graphql": "15.8.0",
+    "graphql": "16.3.0",
     "graphql-scalars": "1.17.0",
     "graphql-tag": "2.12.6",
     "micro": "9.3.4",

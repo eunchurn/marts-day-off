@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
-import Router, { useRouter } from "next/router";
+import Router from "next/router";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/client";
 
@@ -14,7 +14,7 @@ const SignupMutation = gql`
   }
 `;
 
-function Signup(props) {
+function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
