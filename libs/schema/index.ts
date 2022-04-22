@@ -8,11 +8,11 @@ export const schema = makeSchema({
   types,
   plugins: [declarativeWrappingPlugin()],
   outputs: {
-    typegen: path.join(__dirname, "./libs/generated/nexus-typegen.ts"),
-    schema: path.join(__dirname, "./libs/generated/schema.graphql"),
+    typegen: path.join(__dirname, "../generated/nexus-typegen.ts"),
+    schema: path.join(__dirname, "../generated/schema.graphql"),
   },
   contextType: {
-    module: path.join(__dirname, "./libs/schema/context/index.ts"),
+    module: path.join(__dirname, "./context/index.ts"),
     export: "Context",
   },
 });
