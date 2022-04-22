@@ -13,8 +13,9 @@
     "generate:prisma": "prisma generate",
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
     "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json libs/schema/index.ts",
-    "prebuild": "npm -s run generate && ls ./libs/generated",
+    "prebuild": "NODE_ENV=development npm -s run generate",
     "typecheck": "tsc --noEmit",
+    "postbuild": "npm -s run schema:publish",
     "schema:publish": "rover subgraph publish mart-day-off@prod --name mart-day-off --schema ./libs/generated/schema.graphql --routing-url https://marts-day-off.vercel.app/api"
   },
   "dependencies": {
