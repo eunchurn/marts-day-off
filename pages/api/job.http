@@ -4,6 +4,6 @@ Authorization: Bearer {{$dotenv %API_SECRET_KEY}}
 
 ###
 
-POST http://localhost:3000/api/job
+POST https://marts-day-off.vercel.app/api/job
 content-type: application/json
 Authorization: Bearer {{$dotenv %API_SECRET_KEY}}
