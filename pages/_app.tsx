@@ -1,15 +1,10 @@
-import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-
-const client = new ApolloClient({
-  cache: new InMemoryCache(),
-  uri: "/api",
-});
+import { ApolloClientProvider } from "../context";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ApolloProvider client={client}>
+    <ApolloClientProvider>
       <Component {...pageProps} />
-    </ApolloProvider>
+    </ApolloClientProvider>
   );
 }
 

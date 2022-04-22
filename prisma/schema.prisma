@@ -91,3 +91,9 @@ model Mart {
 
   @@unique([brand, name], name: "unique_brand_with_storeName")
 }
+
+model LastUpdate {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  indicator Int      @unique @default(0)
+  updatedAt DateTime @updatedAt
+}

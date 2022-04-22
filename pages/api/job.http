@@ -1,0 +1,9 @@
+POST http://localhost:3000/api/job
+content-type: application/json
+Authorization: Bearer {{$dotenv %API_SECRET_KEY}}
+
+###
+
+POST http://localhost:3000/api/job
+content-type: application/json
+Authorization: Bearer {{$dotenv %API_SECRET_KEY}}
