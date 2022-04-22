@@ -16,7 +16,7 @@
     "prebuild": "npm -s run generate",
     "typecheck": "tsc --noEmit",
     "postbuild": "npm -s run schema:publish",
-    "schema:publish": "rover subgraph publish mart-day-off@prod --name mart-day-off --schema libs/generated/schema.graphql --routing-url https://marts-day-off.vercel.app/api"
+    "schema:publish": "rover subgraph publish mart-day-off@prod --name mart-day-off --schema ./libs/generated/schema.graphql --routing-url https://marts-day-off.vercel.app/api"
   },
   "dependencies": {
     "@apollo/client": "3.5.10",
