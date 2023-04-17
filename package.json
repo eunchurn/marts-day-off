@@ -39,7 +39,7 @@
     "random-useragent": "0.5.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-markdown": "8.0.2",
+    "react-markdown": "8.0.7",
     "tesseract.js": "2.1.5"
   },
   "devDependencies": {
