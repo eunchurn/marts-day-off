@@ -383,10 +383,12 @@
     eslint-plugin-prettier "^4.0.0"
     prettier "^2.6.0"
 
-"@eunchurn/prettier-config@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@eunchurn/prettier-config/-/prettier-config-0.0.2.tgz#59b5e004c6518a0afd38d484096f5c04cd05fc2d"
-  integrity sha512-QdIpSF+QppsrwrVcSRtlgtvyJWflHqmEKOIhr52gBhyiX64Xn54p5t3HWPqz/JOVcdJcwzmi5mzK9HD/HEA3Cg==
+"@eunchurn/prettier-config@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@eunchurn/prettier-config/-/prettier-config-0.0.6.tgz#b274f18fccc234e1d77d0479d2510247b25d10af"
+  integrity sha512-tWs1h432lYjgYEvFBjlZ73zyE3ldvC5O4Mfs8WIpF/qm/iQt7bGd7kz6enM3jjArph0Jw9rhlvnEPKXWQWqBkA==
+  dependencies:
+    prettier "^2.8.2"
 
 "@graphql-tools/merge@8.2.10":
   version "8.2.10"
@@ -4341,6 +4343,11 @@ prettier@^2.6.0:
   version "2.6.2"
   resolved "https://registry.npmjs.org/prettier/-/prettier-2.6.2.tgz#e26d71a18a74c3d0f0597f55f01fb6c06c206032"
   integrity sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==
+
+prettier@^2.8.2:
+  version "2.8.8"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.8.tgz#e8c5d7e98a4305ffe3de2e1fc4aca1a71c28b1da"
+  integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
 
 pretty-format@^27.0.0, pretty-format@^27.5.1:
   version "27.5.1"

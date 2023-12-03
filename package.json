@@ -45,7 +45,7 @@
   "devDependencies": {
     "@apollo/rover": "0.5.1",
     "@eunchurn/eslint-config": "0.1.8",
-    "@eunchurn/prettier-config": "0.0.2",
+    "@eunchurn/prettier-config": "0.0.6",
     "@types/graphql": "14.5.0",
     "@types/jest": "27.4.1",
     "@types/micro-cors": "0.1.2",
